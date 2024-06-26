@@ -1,6 +1,12 @@
 
 <div id="top"></div>
 
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Tailwind badge](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![JS](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
+
 # درباره این پروژه کوچک
 حقیقت اینه که یک روز میخواستم آموزش های یک دوره آموزشی رو دانلود کنم و از اونجایی که تعداد جلساتش زیاد بود روی دانلود همگانی زدم و یک فایل txt از تمام لینک های اون آموزش بهم داد و داستان از جایی شروع شد که فایل رو باز کردم و چیزی که دیدم این بود :
 - 01-Introduction.mp4
