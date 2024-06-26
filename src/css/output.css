@@ -2089,10 +2089,6 @@ video {
   --tw-bg-opacity: 0.75;
 }
 
-.bg-background {
-  background-image: url('/src/image/Project-background-min.jpeg');
-}
-
 .decoration-slice {
   -webkit-box-decoration-break: slice;
           box-decoration-break: slice;
@@ -2894,6 +2890,10 @@ ol {
 .app-input::placeholder {
   color: black;
   opacity: 0.6;
+}
+
+.background {
+  background-image: url("../image/Project-background.png");
 }
 
 ::-webkit-scrollbar {

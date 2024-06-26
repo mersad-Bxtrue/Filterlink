@@ -21,9 +21,6 @@ module.exports = {
           DEFAULT: "#111928bf"
         },
       },
-      backgroundImage: {
-        "background": "url('/src/image/Project-background-min.jpeg')"
-      }
     },
     container: {
       center: true,
