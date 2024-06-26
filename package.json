@@ -1,0 +1,17 @@
+{
+  "name": "filterlink",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch"
+  },
+  "author": "Mersad Fallah",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
+  },
+  "dependencies": {
+    "sweetalert2": "^11.12.0"
+  }
+}

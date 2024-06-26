@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: Dana;
+    src: local(dana-medium), url("../font/dana-medium.eot") format(eot);
+    src: local(dana-medium), url("../font/dana-medium.woff") format(woff);
+    src: local(dana-medium), url("../font/dana-medium.woff2") format(woff2);
+}
+
+* {
+    font-family: Dana;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+.swal2-confirm {
+    background-color: #007bff !important;
+}
+
+.app-input::placeholder {
+    color: black;
+    opacity: 0.6;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    cursor: context-menu;
+}
+
+::-webkit-scrollbar-track {
+    background: #dfdfdf;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #007bff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0066d3;
+}

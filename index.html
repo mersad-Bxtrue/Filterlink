@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links Finder</title>
+    <link rel="stylesheet" href="./node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="./src/css/output.css">
+</head>
+
+<body class="bg-background bg-cover bg-no-repeat bg-fixed text-sm leading-7 max-sm:py-0 max-lg:px-2">
+
+    <section
+        class="max-w-[800px] mx-auto my-12 p-5 bg-secondary bg-opacity-75 rounded-xl border border-solid border-gray-700 backdrop-filter backdrop-blur-md backdrop-saturate-[180%]">
+        <div class="app-header flex items-center gap-4 justify-center">
+            <h1 class="text-slate-100 text-center text-4xl py-12 font-semibold max-sm:text-2xl max-xs:text-xl">
+                فیلتر کردن لینک ها بر اساس فرمت
+            </h1>
+            <button class="about relative text-slate-100 cursor-pointer hover:text-slate-300" title="درباره برنامه">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-8 max-xs:size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                </svg>
+            </button>
+
+        </div>
+
+        <textarea class="app-input text-zinc-900 w-full h-40 rounded-md p-6 resize-none"
+            placeholder="لینک‌ها را در اینجا وارد کنید..."></textarea>
+
+        <div
+            class="app-controller flex items-center justify-between my-6 mx-0 py-2 max-sm:flex-col max-sm:gap-12 max-sm:items-end">
+            <div class="right-controller flex gap-4 max-sm:flex-col max-sm:w-full">
+
+                <div class="links-format relative">
+                    <button
+                        class="format-btn flex items-center gap-3 px-5 py-2 bg-primary text-slate-100 rounded-md border-none transition-all duration-100 ease-in-out hover:bg-blue-600 max-sm:w-full">
+                        انتخاب فرمت مورد نظر
+                        <svg class="button-arrow w-4 h-4 transition-transform duration-100 ease-in-out transform"
+                            xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 320 512">
+                            <path
+                                d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                        </svg>
+                        <p class="format-type"></p>
+                    </button>
+                    <ul
+                        class=" format-lists hidden absolute w-full mt-2 bg-white rounded-md border-t-4 border-b-4 border-blue-500 h-64 overflow-y-auto">
+                        <!-- Data Loaded From JS -->
+                    </ul>
+                </div>
+
+                <div class="search-links">
+                    <button
+                        class=" bg-primary text-slate-100 rounded-md flex items-center gap-2 py-2 px-5 border-none transition-all duration-100 ease-in-out hover:bg-blue-600 max-sm:w-full"
+                        onclick="findLink()">
+                        جستجوی لینک ها
+                        <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 512 512">
+                            <path
+                                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div
+                    class="loader hidden items-center flex-row gap-2 mr-4 max-sm:justify-center max-sm:mt-4 max-sm:mr-0">
+                    <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.7s]"></div>
+                    <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.3s]"></div>
+                    <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.7s]"></div>
+                </div>
+            </div>
+
+            <div class="left-controller flex gap-4 items-center h-full max-sm:w-full">
+                <p class="copied hidden text-slate-100 py-1 px-2 rounded-md bg-gray-700">کپی شد ✅</p>
+                <button class="copy" title="کپی کردن لینک ها">
+                    <svg class=" hover:fill-primary cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="#f1f5f9"
+                        height="24" width="24" viewBox="0 0 448 512"
+                        onclick="copyLinks()"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M384 336H192c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16l140.1 0L400 115.9V320c0 8.8-7.2 16-16 16zM192 384H384c35.3 0 64-28.7 64-64V115.9c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1H192c-35.3 0-64 28.7-64 64V320c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H256c35.3 0 64-28.7 64-64V416H272v32c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192c0-8.8 7.2-16 16-16H96V128H64z" />
+                    </svg>
+                </button>
+                <button class="delete" title="حذف کردن نتایج">
+                    <svg class=" hover:fill-red-400 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="#f1f5f9"
+                        height="24" width="24"
+                        viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M170.5 51.6L151.5 80h145l-19-28.4c-1.5-2.2-4-3.6-6.7-3.6H177.1c-2.7 0-5.2 1.3-6.7 3.6zm147-26.6L354.2 80H368h48 8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-8V432c0 44.2-35.8 80-80 80H112c-44.2 0-80-35.8-80-80V128H24c-13.3 0-24-10.7-24-24S10.7 80 24 80h8H80 93.8l36.7-55.1C140.9 9.4 158.4 0 177.1 0h93.7c18.7 0 36.2 9.4 46.6 24.9zM80 128V432c0 17.7 14.3 32 32 32H336c17.7 0 32-14.3 32-32V128H80zm80 64V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div dir="ltr"
+            class="app-output hidden max-h-56 overflow-y-auto text-slate-100 bg-[#00000045] bg-opacity-40 rounded-lg px-5">
+            <!-- Data Loaded From JS -->
+        </div>
+    </section>
+
+    <div
+        class="modal hidden absolute z-20 w-2/3 top-1/2 left-1/2 translate-x-full -translate-y-1/2 text-zinc-900 bg-slate-50 rounded-md leading-9  shadow-lg shadow-black-500/50 pt-24 pb-14 px-16 transition-all duration-300 max-md:w-4/5 max-sm:w-full max-sm:h-full max-sm:px-10">
+        <button
+            class="close-modal absolute top-6 right-6 cursor-pointer transition-all rounded-full hover:text-red-500 hover:bg-red-400/30">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-10">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <h1 class="modal-header text-4xl mb-6 font-bold max-sm:text-2xl">نحوه استفاده از برنامه 😍</h1>
+        <p class="modal-content max-sm:text-md">
+            حتما براتون پیش اومده که مثلا تعداد زیادی لینک داشته باشید با فرمت های مختلف ولی مثلا بخواید از بین اون ها
+            فقط لینکی که فرمت .mp4 رو داره در واقع فیلتر کنید و داشته باشید برای دانلود یا هرچیز دیگه ای... <br>
+            در این شرایط کافیه تمام لینک هایی که دارید رو کپی کنید اینجا و بعد فرمت مورد نظرتون رو از لیست انتخاب کنید و
+            روی جستجوی لینک ها کلیک کنید تا لیست مرتب شده ای از لینک هاتون رو ببینید و حتی کپی کنید همشون رو.
+        </p>
+    </div>
+
+    <div
+        class="overlay hidden absolute top-0 left-0 w-full h-full bg-slate-900/60 z-10 backdrop-blur-md transition-all duration-300 opacity-0">
+    </div>
+
+    <script src="./node_modules/sweetalert2/dist/sweetalert2.js"></script>
+    <script src="./src/js/script.js"></script>
+</body>
+
+</html>
