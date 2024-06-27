@@ -90,11 +90,13 @@ function copyLinks() {
 }
 
 const closeModal = () => {
-    modal.classList.add("hidden");
-    overlay.classList.add("hidden");
     modal.classList.add("translate-x-full");
     modal.classList.remove("-translate-x-1/2");
     overlay.classList.add("opacity-0");
+    setTimeout(() => {
+        modal.classList.add("hidden");
+        overlay.classList.add("hidden");
+    }, 500);
 }
 
 window.addEventListener("load", () => {
