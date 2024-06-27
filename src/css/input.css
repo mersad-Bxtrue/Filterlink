@@ -36,6 +36,10 @@ ol {
     background-image: url("../image/Project-background.webp");
 }
 
+.lazy-background {
+    background-image: url("../image/Project-background-lazy.jpg");
+}
+
 ::-webkit-scrollbar {
     width: 10px;
     cursor: context-menu;

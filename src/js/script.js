@@ -1,8 +1,11 @@
+"use strict";
+
 const allFormats = [
     'jpg', 'png', 'gif', 'tiff', 'bmp', 'webp', 'heic', 'mp4', 'avi', 'mov', 'wmv', 'mkv', 'flv', 'webm', 'mp3', 'wav', 'flac', 'aac', 'ogg', 'm4a', 'txt', 'pdf', 'rar', 'zip', '7z', 'tar.gz', 'docx', 'html', 'csv', 'srt', 'svg', 'xls', 'xlsx', 'pptx', 'json', 'xml', 'md', 'epub', 'mobi', 'odt'
 ];
 
 // DOM Elements
+const originalImage = document.querySelector('.background');
 const aboutBtn = document.querySelector(".about");
 const formatBtn = document.querySelector(".format-btn");
 const buttonArrow = document.querySelector(".button-arrow");
@@ -116,6 +119,12 @@ window.addEventListener("load", () => {
         const li = `<li class="format-items cursor-pointer py-3 px-3 border-b hover:bg-blue-400/30 border-y-gray-300 text-zinc-700">${format}</li>`;
         formatList.insertAdjacentHTML("beforeend", li);
     });
+
+    // check if the original image is already loaded
+    if (originalImage.complete) {
+        document.body.classList.remove("lazy-background")
+        document.body.classList.add("background")
+    }
 });
 
 // Event listener to show/hide format list and add click handlers to format items
