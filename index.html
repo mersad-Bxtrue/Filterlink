@@ -14,12 +14,13 @@
     <link rel="stylesheet" href="./src/css/output.css">
 </head>
 
-<body class="lazy-background bg-cover bg-no-repeat bg-fixed text-sm leading-7 max-sm:py-0 max-lg:px-2">
+<body
+    class="lazy-background bg-cover bg-no-repeat bg-fixed flex flex-col items-center min-h-[100vh] m-0 px-2 text-sm leading-7 max-sm:py-0">
     <img src="./src/image/Project-background.webp" alt="" class="hidden invisible background">
 
     <!-- Main container for the application -->
     <section
-        class="max-w-[800px] mx-auto my-12 p-5 bg-secondary bg-opacity-75 rounded-xl border border-solid border-gray-700 backdrop-filter backdrop-blur-md backdrop-saturate-[180%]">
+        class="max-w-[800px] w-full mt-8 mb-5 p-5 bg-secondary bg-opacity-75 rounded-xl border border-solid border-gray-700 backdrop-filter backdrop-blur-md backdrop-saturate-[180%] max-md:mx-2">
 
         <!-- Application header -->
         <div class="app-header flex items-center gap-4 justify-center">
@@ -110,6 +111,18 @@
             class="app-output hidden max-h-56 overflow-y-auto text-slate-100 bg-[#00000045] bg-opacity-40 rounded-lg px-5">
             <!-- Data Loaded From JS -->
         </div>
+
+
+
+    </section>
+
+    <!-- licence section -->
+    <section
+        class="licence bg-gray-950/40 shadow-[0_0_0px_8px_#03071266]  text-slate-100 w-full flex justify-center items-baseline mt-auto py-3 max-sm:text-xs">
+        تمامی حقوق این پروژه متعلق به <a
+            class="px-2 text-xl text-primary hover:text-blue-600 max-sm:text-base underline"
+            href="https://github.com/mersad-Bxtrue" target="_blank">مرصاد
+            فلاح</a> است.
     </section>
 
     <!-- Modal for instructions -->
