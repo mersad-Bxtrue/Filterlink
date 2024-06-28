@@ -1,7 +1,7 @@
 "use strict";
 
 const allFormats = [
-    'jpg', 'png', 'gif', 'tiff', 'bmp', 'webp', 'heic', 'mp4', 'avi', 'mov', 'wmv', 'mkv', 'flv', 'webm', 'mp3', 'wav', 'flac', 'aac', 'ogg', 'm4a', 'txt', 'pdf', 'rar', 'zip', '7z', 'tar.gz', 'tar', 'docx', 'html', 'csv', 'srt', 'svg', 'xls', 'xlsx', 'pptx', 'json', 'xml', 'md', 'epub', 'mobi', 'odt'
+    'jpg', 'png', 'gif', 'tiff', 'bmp', 'webp', 'heic', 'mp4', 'avi', 'mov', 'wmv', 'mkv', 'flv', 'webm', 'mp3', 'wav', 'flac', 'aac', 'ogg', 'm4a', 'txt', 'pdf', 'rar', 'zip', '7z', 'tar.gz', 'tar', 'docx', 'html', 'csv', 'srt', 'svg', 'xls', 'xlsx', 'pptx', 'json', 'xml', 'md', 'epub', 'mobi', 'odt', 'ttf', 'woff', 'woff2', 'eot'
 ];
 
 // DOM Elements
