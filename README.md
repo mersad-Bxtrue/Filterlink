@@ -23,7 +23,7 @@
 ## پیش نمایش پروژه 🙃
 ### <a href="https://mersad-bxtrue.github.io/Filterlink/">استفاده از اپ به صورت آنلاین</a>
 ---
-<img src='./src/image/project-demo.png' alt='Forkify preview' >
+<img src='./src/image/project-demo.png' alt='Filterlink preview' >
 
 ## نحوه کار باهاش چطوره؟ 🤛🤜
 
