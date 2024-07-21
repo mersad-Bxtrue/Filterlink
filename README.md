@@ -13,8 +13,8 @@
 - 01-Introduction-pr.srt
 - 01-Introduction-en.srt
 - 02-lets-start.mp4
-- 03-lets-start.srt
-- 04-lets-start.srt
+- 02-lets-start.srt
+- 02-lets-start.srt
 - and ...
 
 راستش تعداد جلساتش زیاد بود و میخواستم فقط ویدئوهاش رو دانلود کنم یعنی اونایی که فقط فرمت mp4 دارن ولی اگه میخواستم تک تک لینک فایل های زیرنویس رو حذف میکردم قطعا زمان زیادی میبرد و حوصله سر بر بود.
